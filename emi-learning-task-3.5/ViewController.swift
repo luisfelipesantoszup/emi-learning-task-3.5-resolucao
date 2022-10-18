@@ -9,9 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var areaTextField: UITextField!
+    @IBOutlet weak var areaAtuacaoTextField: UITextField!
     @IBOutlet weak var statusTextField: UITextField!
     
     override func viewDidLoad() {
@@ -19,17 +20,17 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func botaoReceberPressionado(_ sender: UIButton) {
+    @IBAction func botaoReceberMaterialPressionado(_ sender: Any) {
         confirmarDados()
     }
     
     func confirmarDados() {
         let titulo = "Quase lá!"
-        let mensagem = "Antes de enviarmos, por favor, revise seus dados:\n\nNome: \(nomeTextField.text!)\nEmail: \(emailTextField.text!)\nÁrea de Atuação: \(areaTextField.text!)\nStatus Profissional: \(statusTextField.text!)"
+        let mensagem = "Antes de enviarmos, por favor, revise seus dados:\n\nNome: \(nomeTextField.text!)\nEmail: \(emailTextField.text!)\nÁrea de Atuação: \(areaAtuacaoTextField.text!)\nStatus Profissional: \(statusTextField.text!)"
         
         let alert = UIAlertController(title: titulo, message: mensagem, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: { action in
             self.enviarDados()
         }))
         
