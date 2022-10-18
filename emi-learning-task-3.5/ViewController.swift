@@ -30,14 +30,18 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: titulo, message: mensagem, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: { action in
-            self.enviarDados()
-        }))
+        alert.addAction(UIAlertAction(title: "Confirmar", style: .default, handler: enviarDados))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
         
         present(alert, animated: true, completion: nil)
     }
     
-    func enviarDados() {
+    func enviarDados(_ action: UIAlertAction) {
+        exibeAlertaDeDadosEnviados()
+    }
+    
+    func exibeAlertaDeDadosEnviados() {
         let alert = UIAlertController(title: "Feito!", message: "Verifique seu email e tenha acesso ao documento.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok!", style: .cancel, handler: nil))
