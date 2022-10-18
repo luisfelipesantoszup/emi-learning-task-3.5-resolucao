@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     
     @IBAction func botaoReceberPressionado(_ sender: UIButton) {
         confirmarDados()
-        enviarDados()
     }
     
     func confirmarDados() {
